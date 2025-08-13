@@ -62,7 +62,7 @@ export const Hero = () => {
               View My work
             </motion.a>
             <motion.a
-              href="#contacts"
+              href="#contact"
               className="cta-secondary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -105,22 +105,34 @@ export const Hero = () => {
             >
               {`const aboutMe: DeveloperProfile = {
   codename: "VictorCreativee",
-  origin: " Creativity and Innovation on the talk",
-  role: "Fullstack Web Developer",
+  origin: "Building bridges between knowledge and opportunity",
+  role: "Founder & Fullstack Developer",
+  project: {
+    name: "Gummi",
+    description:
+      "A global platform for education and collaboration, 
+      connecting learners with experts through workspaces, 
+      communities, and hands-on learning.",
+    mission:
+      "Empowering tech enthusiasts worldwide with mentorship, 
+      collaboration, showcasing, and earning opportunities in 
+      one accessible space.",
+    coreFeatures: [
+      "Personalized mentorship",
+      "Interactive workspaces",
+      "Community-driven collaboration",
+      "Skill and project showcasing",
+      "Earning through expertise",
+      "Investor hub for real projects",
+    ],
+  },
   stack: {
-    languages: ["JavaScript", "TypeScript", "SQL"],
+    languages: ["JavaScript", "TypeScript", "SQL", "Java"],
     frameworks: ["React", "Next.js", "TailwindCSS", "Firebase"],
   },
-  traits: [
-    "pixel-perfectionist",
-    "API whisperer",
-    "dark mode advocate",
-    "terminal aesthetic enthusiast",
-  ],
-  missionStatement:
-    "Turning ideas into interfaces and bugs into feature",
-  availability: "Available for hire",
-};`}
+  availability: "Available while building Gummi",
+};
+`}
             </SyntaxHighlighter>
           </div>
 
@@ -132,7 +144,7 @@ export const Hero = () => {
             <div className="card-content">
               <span className="card-icon">💻</span>
               <span className="card-text">
-                Currently working on something awesome!
+                Currently building Gummi something awesome!.
               </span>
             </div>
           </motion.div>
