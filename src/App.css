@@ -420,11 +420,12 @@ body {
 .project-card h3 {
   padding: 1.5rem 1.5rem 0.5rem;
   color: var(--light-text);
-  flex-grow: 1;
+  /* flex-grow: 1; */
   
 }
 .project-card p {
   padding: 0 1.5rem 1rem 1.5rem;
+  flex-grow: 1;
   
 }
 .project-tech {
