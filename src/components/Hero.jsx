@@ -44,7 +44,6 @@ export const Hero = () => {
             VictorCreativee
           </motion.h1>
           <motion.h2 className="hero-subtitle" variants={fadeInUp}>
-            {" "}
             Creative developer & Designer
           </motion.h2>
           <motion.p className="hero-description" variants={fadeInUp}>
