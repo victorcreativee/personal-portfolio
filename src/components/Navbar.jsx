@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -15,6 +16,8 @@ const staggerContainer = {
 };
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.nav
       className="navbar"
@@ -30,33 +33,30 @@ export const Navbar = () => {
         VictorCreativee
       </motion.div>
 
+      {/* Hamburger */}
+      <div
+        className={`hamburger ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Nav Links */}
       <motion.ul
-        className="nav-links"
+        className={`nav-links ${isOpen ? "active" : ""}`}
         variants={staggerContainer}
         initial="initial"
         animate="animate"
       >
-        <motion.li
-          variants={fadeInUp}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <motion.li variants={fadeInUp}>
           <a href="#home">Home</a>
         </motion.li>
-
-        <motion.li
-          variants={fadeInUp}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <motion.li variants={fadeInUp}>
           <a href="#projects">Projects</a>
         </motion.li>
-
-        <motion.li
-          variants={fadeInUp}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <motion.li variants={fadeInUp}>
           <a href="#contact">Contact</a>
         </motion.li>
       </motion.ul>

@@ -69,6 +69,7 @@ body {
   display: flex;
   gap: 2rem;
   list-style: none;
+  
  }
 
  .nav-links a {
@@ -98,6 +99,40 @@ body {
  .nav-links a:hover::after {
   width: 100%;
  }
+
+ /* Hamburger Menu */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100; /* above nav links */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger active state */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
 
  /* Hero section */
 
@@ -321,10 +356,72 @@ body {
 
 
 @media (max-width: 768px) {
-  .hero-image-container{
+  .hero-image-container {
     display: none;
   }
+  .glitch {
+    font-size: 3.6rem;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger on mobile */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--nav-bg);
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    display: flex;        /* always flex, don’t toggle display */
+    max-height: 0;         /* hidden by default */
+    overflow: hidden;      /* hide overflowing links */
+    opacity: 0;            /* hidden */
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px;    /* enough to show all links */
+    opacity: 1;           /* show links */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
+
 
 
 /* Project session */
